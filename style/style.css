@@ -25,7 +25,7 @@ body, html {
 
 .content {
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 .main-top {
@@ -38,13 +38,13 @@ body, html {
 }
 
 .main-top .first-h2 {
-    font-size: 35px;
+    font-size: 36px;
     color: var(--very-dark-blue);
     font-weight: 200;
 }
 
 .main-top .second-h2 {
-    font-size: 35px;
+    font-size: 36px;
     color: var(--very-dark-blue);
     font-weight: 600;
 }
@@ -67,29 +67,152 @@ body, html {
     ;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .card {
-    width: 200px;
-    height: 200px;
+    background-color: var(--very-light-gray);
+    width: 350px;
+    height: 250px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 30px;
+}
+
+.card .card-top .title {
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card .card-top .description {
+    font-size: 15px;
+    color: var(--grayish-blue);
+}
+
+.card .card-bottom img {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
 }
 
 .card-1 {
-    background-color: red;
     grid-area: i1;
+    position: absolute;
+    top: -45px;
+    left: -555px;
+    border-top: 0.3rem solid var(--cyan);
 }
 
 .card-2 {
-    background-color: green;
     grid-area: i2;
+    position: absolute;
+    top: 30px;
+    left: -175px;
+    border-top: 0.3rem solid var(--red);
 }
 
 .card-3 {
-    background-color: blue;
     grid-area: i3;
+    position: absolute;
+    top: 90px;
+    left: -175px;
+    border-top: 0.3rem solid var(--orange);
 }
 
 .card-4 {
-    background-color: brown;
     grid-area: i4;
+    position: absolute;
+    top: -265px;
+    left: 205px;
+    border-top: 0.3rem solid var(--blue);
+}
+
+@media (max-width: 1140px) {
+
+    .main-top {
+        height: 300px;
+    }
+
+    .main-cards {
+        display: flex;
+        height: 1150px;
+        width: 100%;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .card {
+        pad: 25px;
+    }
+    .card-1 {
+        /* position: absolute; 
+        top: -45px;
+        left: -555px; */
+        position: static;
+        border-top: 0.3rem solid var(--cyan);
+    }
+    .card-2 {
+        position: static;
+        border-top: 0.3rem solid var(--red);
+    }
+    .card-3 {
+        position: static;
+        border-top: 0.3rem solid var(--orange);
+    }
+    .card-4 {
+        position: static;
+        border-top: 0.3rem solid var(--blue);
+    }
+    .card .card-bottom img {
+        position: relative;
+        width: 90%;
+        bottom: -40px;
+        right: -230px;
+    }
+
+}
+
+@media (max-width: 520px) {
+
+    html, body, .content {
+        min-width: 375px;
+    }
+
+    .main-top {
+        height: 300px;
+        text-align: center;
+        padding: 0 27px;
+    }
+    .main-top .first-h2 {
+        font-size: 26px;
+    }
+    .main-top .second-h2 {
+        font-size: 26px;
+    }
+    .main-top p {
+        font-size: 16px;
+        width: 100%;
+    }
+    .main-top p br {
+        display: none;
+    }
+    .main-cards .card{
+        width: 85%;
+        padding: 20px;
+    }
+    .card .card-bottom img {
+        position: relative;
+        width: 90%;
+        bottom: -50px;
+        right: -210px;
+    }
+    .card .card-top .description {
+        font-size: 15px;
+    }
 }
